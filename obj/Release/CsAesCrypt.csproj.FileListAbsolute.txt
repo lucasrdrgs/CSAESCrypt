@@ -1,0 +1,6 @@
+C:\Users\Gamer\Desktop\CSAESCrypt\CsAesCrypt\bin\Release\CsAesCrypt.dll
+C:\Users\Gamer\Desktop\CSAESCrypt\CsAesCrypt\bin\Release\CsAesCrypt.pdb
+C:\Users\Gamer\Desktop\CSAESCrypt\CsAesCrypt\obj\Release\CsAesCrypt.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\CSAESCrypt\CsAesCrypt\obj\Release\CsAesCrypt.dll
+C:\Users\Gamer\Desktop\CSAESCrypt\CsAesCrypt\obj\Release\CsAesCrypt.pdb
+C:\Users\Gamer\Desktop\CSAESCrypt\CsAesCrypt\obj\Release\CsAesCrypt.csprojAssemblyReference.cache
