@@ -1,6 +1,6 @@
 ### Read me
 
-This AES cryptography library was made by Lucas Rodrigues (lucasrdrgs at github).
+This AES cryptography library was made by Lucas Rodrigues.
 
 Please don't distribute this without crediting the developer.
 
