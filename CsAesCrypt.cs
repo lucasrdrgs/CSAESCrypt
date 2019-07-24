@@ -1,7 +1,8 @@
 /*
-This AES cryptography wrapper was made by Lucas Rodrigues (lucasrdrgs at github).
-Please don't distribute this without crediting the developer.
-The developer is not responsible for misuse of the application.
+	Read the disclaimer @ README.md
+	
+	Funny thing: I don't remember writing any of this.
+	I was actually surprised when I found it in my Github.
 */
 
 using System;
@@ -24,7 +25,7 @@ namespace CsAesCryptN
 		{
 			this.Key = (Key.Length == 32) ? Key : string.Empty;
 			this.IV = (IV.Length == 16) ? IV : string.Empty;
-			if(this.Key == string.Empty) throw new ArgumentException("Parameter \"Key\" is not 32 characters long.", "Key");
+			if(this.Key == string.Empty)	throw new ArgumentException("Parameter \"Key\" is not 32 characters long.", "Key");
 			if(this.IV == string.Empty)	throw new ArgumentException("Parameter \"IV\" is not 16 characters long.", "IV");
 		}
 
