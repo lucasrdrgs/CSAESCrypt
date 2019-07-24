@@ -8,12 +8,12 @@ namespace Example
 	{
 		static void Main(string[] args)
 		{
-			CsAesCrypt c = new CsAesCrypt(); // This will create a CsAesCrypt instance with randomly generated key & IV
-			// PS: lengths are 32 and 16, respectively.
+			// This will create a CsAesCrypt instance with randomly generated key & IV
+			CsAesCrypt c = new CsAesCrypt();
 			
 			// If you want to use your own key & iv, do this:
 			// CsAesCrypt c = new CsAesCrypt(yourKey, yourIV);
-			// Please use 32 char long key and 16 char long iv.
+			// Please use a 32 char long key and a 16 char long IV.
 			
 			string path = Console.ReadLine();
 			if(!File.Exists(path)) {
