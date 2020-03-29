@@ -1,7 +1,7 @@
 /*
-	Read the disclaimer @ README.md
+	Read the disclaimer at README.md
 	
-	Funny thing: I don't remember writing any of this.
+	Fun fact: I don't remember writing any of this.
 	I was actually surprised when I found it in my Github.
 */
 
@@ -9,49 +9,41 @@ using System;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace CsAesCryptN
-{
-	public class CsAesCrypt
-	{
+namespace CsAesCryptN {
+	public class CsAesCrypt {
 		public string Key { get; set; }
 		public string IV { get; set; }
 
 		/// <summary>
 		/// Creates an instance of CsAesCrypt class.
 		/// </summary>
-		/// <param name="Key">AES 256 CBC Key. It has to be 32 characters long.</param>
-		/// <param name="IV">AES 256 CBC IV. It has to be 16 characters long.</param>
-		public CsAesCrypt(string Key, string IV)
-		{
+		/// <param name="Key">AES 256 CBC Key. It must be 32 characters long.</param>
+		/// <param name="IV">AES 256 CBC IV. It must be 16 characters long.</param>
+		public CsAesCrypt(string Key, string IV) {
 			this.Key = (Key.Length == 32) ? Key : string.Empty;
 			this.IV = (IV.Length == 16) ? IV : string.Empty;
-			if(this.Key == string.Empty)	throw new ArgumentException("Parameter \"Key\" is not 32 characters long.", "Key");
-			if(this.IV == string.Empty)	throw new ArgumentException("Parameter \"IV\" is not 16 characters long.", "IV");
+			if(this.Key == string.Empty) throw new ArgumentException("Parameter \"Key\" is not 32 characters long.", "Key");
+			if(this.IV == string.Empty) throw new ArgumentException("Parameter \"IV\" is not 16 characters long.", "IV");
 		}
 
-		public CsAesCrypt()
-		{
+		public CsAesCrypt() {
 			Key = GenerateString(32);
 			IV = GenerateString(16);
 		}
 
-		public static string GenerateString(int length = 32)
-		{
+		public static string GenerateString(int length = 32) {
 			Random r = new Random();
 			string possibleChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 			string Key = "";
-			for (int i = 0; i < length; i++)
-			{
+			for (int i = 0; i < length; i++) {
 				int randomIndex = r.Next(possibleChars.Length);
 				Key += possibleChars[randomIndex];
 			}
 			return Key;
 		}
 
-		public byte[] EncodeBytes(byte[] bytesToEncode)
-		{
-			AesCryptoServiceProvider aes = new AesCryptoServiceProvider
-			{
+		public byte[] EncodeBytes(byte[] bytesToEncode) {
+			AesCryptoServiceProvider aes = new AesCryptoServiceProvider {
 				BlockSize = 128,
 				KeySize = 256,
 				Key = Encoding.UTF8.GetBytes(Key),
@@ -65,10 +57,8 @@ namespace CsAesCryptN
 			return bytesToEncode;
 		}
 
-		public byte[] DecodeBytes(byte[] encryptedBytes)
-		{
-			AesCryptoServiceProvider aes = new AesCryptoServiceProvider
-			{
+		public byte[] DecodeBytes(byte[] encryptedBytes) {
+			AesCryptoServiceProvider aes = new AesCryptoServiceProvider {
 				BlockSize = 128,
 				KeySize = 256,
 				Key = Encoding.UTF8.GetBytes(Key),
